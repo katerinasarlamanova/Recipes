@@ -1,0 +1,68 @@
+{% extends "base.html" %}
+
+
+{% block title %}Recipe{% endblock %}
+
+{% block body %}
+
+    <div class="row">
+        <form action="{{ url_for('recipe', id = recipe.id) }}" method="POST">
+            <div class="col-12 mt-5">
+                <div class="card">
+                    <div class="card-body">
+                        <h4 class="header-title">Recipe</h4>
+                        <div class="data-tables datatable-dark">
+                            <div class="form-group">
+                                <label for="recipe_name" class="col-form-label">Recipe name</label>
+                                <input class="form-control" type="text" id="recipe_name"
+                                       value="{{ recipe.recipe_name }}"
+                                       name="recipe_name" readonly>
+                            </div>
+                            <div class="form-group">
+                                <label for="recipe_text" class="col-form-label">Recipe text</label>
+								<textarea class="form-control" id="recipe_text" name="recipe_text" 
+									style="min-height: 130px" readonly>{{ recipe.recipe_text }}
+							    </textarea>
+                            </div>
+                            <div class="form-group">
+                                <label for="avg_rating" class="col-form-label">Rating</label>
+                                <input class="form-control" type="text" id="avg_rating" name="avg_rating"
+                                       value="{{ recipe.avg_rating }}" readonly>
+                            </div>
+                            <div class="form-group">
+                                <label for="ingredient_list" class="col-form-label">Ingredients</label>
+                                <textarea class="form-control" id="ingredient_list" name="ingredient_list"
+                                       readonly>{{ recipe.ingredient_list }}
+								</textarea>
+                            </div>
+                            <div class="form-group">
+                                <label for="user_email" class="col-form-label">User</label>
+                                <input class="form-control" type="text" id="user_email" name="user_email"
+                                       value="{{ recipe.user_email }}" readonly>
+                            </div>
+                        </div>
+                        <form action="rating" method="POST">
+                            {% if user.email != recipe.user_email %}
+                                <div class="form-group">
+                                    <label for="rating">Rate</label>
+                                    <select id="rating" name="rating" class="form-control">
+                                        <option selected disabled hidden>Rate</option>
+                                        <option>1</option>
+                                        <option>2</option>
+                                        <option>3</option>
+                                        <option>4</option>
+                                        <option>5</option>
+                                    </select>
+                                </div>
+                                <div class="submit-btn-area">
+                                    <button id="form_submit" type="submit">Rate<i class="ti-arrow-right"></i></button>
+                                </div>
+                            {% endif %}
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </form>
+    </div>
+
+{% endblock %}

@@ -1,0 +1,17 @@
+{% extends "base.html" %}
+
+
+{% block title %}Forbidden{% endblock %}
+
+{% block body %}
+    <div class="row" style="text-align: center;">
+        <br><br>
+        <h2>
+            Forbidden, you must be loged in for this action!
+            <br>
+            <span>Go to <a href="{{ url_for('login') }}">login page</a>.</span>
+        </h2>
+    </div>
+
+
+{% endblock %}

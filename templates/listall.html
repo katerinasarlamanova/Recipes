@@ -1,0 +1,40 @@
+{% extends "base.html" %}
+
+{% block title %}List of all recipes{% endblock %}
+
+{% block body %}
+
+    <div class="row">
+        <div class="col-12 mt-5">
+            <div class="card">
+                <div class="card-body">
+                    <div class="data-tables datatable-dark">
+                        <table id="dataTable3" class="text-center">
+                            <thead class="text-capitalize">
+                            <tr>
+                                <th style="text-align: center; ">Racipe Name</th>
+                                <th style="text-align: center; ">Racipe Text</th>
+                                <th style="text-align: center; ">Ingredients</th>
+                                <th style="text-align: center; ">Rating</th>
+                                <th style="text-align: center; ">User</th>
+                            </tr>
+                            </thead>
+                            <tbody>
+                            {% for recipe in recipes %}
+                                <tr>
+                                    <td><a href="{{ url_for('recipe', id = recipe.id ) }}">{{ recipe.recipe_name }}</td>
+                                    <td>{{ recipe.recipe_text }}</td>
+                                    <td>{{ recipe.ingredient_list }}</td>
+                                    <td>{{ recipe.avg_rating }}</td>
+                                    <td>{{ recipe.user_email }}</td>
+                                </tr>
+                            {% endfor %}
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+{% endblock %}

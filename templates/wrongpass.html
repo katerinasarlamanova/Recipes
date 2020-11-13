@@ -1,0 +1,17 @@
+{% extends "base.html" %}
+
+
+{% block title %}Wrong{% endblock %}
+
+{% block body %}
+    <div class="row" style="text-align: center;">
+        <br><br>
+        <h2>
+            Wrong password!
+            <br>
+            <span>Go to <a href="{{ url_for('login') }}">login page</a>.</span>
+        </h2>
+    </div>
+
+
+{% endblock %}

@@ -1,0 +1,49 @@
+{% extends "base.html" %}
+
+
+{% block title %}Sign Up{% endblock %}
+
+{% block body %}
+
+    <div class="row">
+        <form method="POST" action="{{ url_for('register') }}">
+            <div class="col-lg-6 col-ml-12">
+                <div class="row">
+                    <div class="col-12 mt-5">
+                        <div class="card">
+                            <div class="card-body">
+                                <h4 class="header-title">Sign up</h4>
+
+                                <div class="form-group">
+                                    <label for="first_name" class="col-form-label">First name:</label>
+                                    <input class="form-control" type="text" id="first_name" placeholder="First name"
+                                           name="first_name" required>
+                                </div>
+                                <div class="form-group">
+                                    <label for="last_name" class="col-form-label">Last name:</label>
+                                    <input class="form-control" type="text" id="last_name" placeholder="Last name"
+                                           name="last_name" required>
+                                </div>
+                                <div class="form-group">
+                                    <label for="email" class="col-form-label">E mail:</label>
+                                    <input class="form-control" type="text" id="email" placeholder="Email" name="email"
+                                           required>
+                                </div>
+                                <div class="form-group">
+                                    <label for="password" class="col-form-label">Password:</label>
+                                    <input class="form-control" type="text" id="password" placeholder="Password"
+                                           name="password" required>
+                                </div>
+                                <div class="submit-btn-area">
+                                    <button id="form_submit" type="submit">Register<i class="ti-arrow-right"></i>
+                                    </button>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </form>
+    </div>
+
+{% endblock %}

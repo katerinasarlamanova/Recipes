@@ -1,0 +1,17 @@
+{% extends "base.html" %}
+
+
+{% block title %}User exists{% endblock %}
+
+{% block body %}
+    <div class="row" style="text-align: center;">
+        <br><br>
+        <h2>
+            User does not exists!
+            <br>
+            <span>Go to <a href="{{ url_for('register') }}">Sign up page</a>.</span>
+        </h2>
+    </div>
+
+
+{% endblock %}
