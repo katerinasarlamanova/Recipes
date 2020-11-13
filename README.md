@@ -1,8 +1,10 @@
 This is a web application for recipes
 
+
 To build the image use  the command:
 
 docker build -t image_name .
+
 
 To run the container use the command:
 
